@@ -12,7 +12,6 @@ const COPIES = [
   ['RAMPLAY_SPEC.md', 'files/RAMPLAY_SPEC.md'],
   ['sdk/ramplay.inc', 'files/ramplay.inc.txt'],
   ['examples/hello/hello.s', 'files/hello.s.txt'],
-  ['docs/from-nes.md', 'files/from-nes.md'],
   ['README.md', 'files/README.md'],
 ];
 let missing = 0;

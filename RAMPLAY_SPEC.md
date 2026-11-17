@@ -39,15 +39,6 @@ Its secure-boot feature is called **Root** ("RamPlay with Root secure boot").
 - Student contributions are accepted under the repo licenses (add a short
   `CONTRIBUTING.md` stating this).
 
-### 1.3 Lineage
-RamPlay is the third machine of the SST 115 "NES Build" series (repo
-`Farmingdale-115-lab`, `public/115/nes/`). v1 (Lab 8) has 256 addresses and a
-cartridge file with a header. v2 (Labs 9 and 10) has a 16-bit bus, a headerless
-cartridge board and the reset vector at `$FFFC`. RamPlay keeps what v2 taught
-(16-bit bus, chip select from the top address lines, little-endian vectors on the
-cartridge, the game catch) and replaces the teaching CPU with a real W65C02S.
-`docs/from-nes.md` lists what carries over and what changes.
-
 ---
 
 ## 2. System Overview
@@ -460,7 +451,7 @@ ramplay-core/
 ├─ tools/                  # rplinfo, gen_tables (later: png2tiles, rplsign, rplsend)
 ├─ tests/protocol/         # conformance vectors
 ├─ hardware/               # KiCad: io-board, cartridge, secure-boot (later)
-└─ docs/                   # from-nes.md, wiring tables, student guides
+└─ docs/                   # wiring tables, student guides
 ```
 
 Platforms, games and servers are not here. The RamPlay project's own are in a separate
@@ -503,7 +494,7 @@ test vectors.
 - v0.1 — initial spec (working name Lit-8).
 - v0.2 — renamed to RamPlay; prefixes `rpl_` / `RPL_`, image extension `.rpl`,
   magic `"RPL1"`; secure-boot feature named Root.
-- v0.3 — M1 to M3 built. Added §1.3 (lineage from NES v1 and v2), the exact parser
+- v0.3 — M1 to M3 built. Added the exact parser
   rules under §6.3, text color (index 15) and sprite clipping in §6.2, the TS port
   choice in §6.4, `RPL_HEADER` / `rpl_cmd` / `rpl_print` and the `rpl_wait_vblank`
   contract in §10, `tools/rplinfo.py` and `tools/gen_tables.py`, §11.2 (engine layout,
